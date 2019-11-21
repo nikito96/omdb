@@ -11,25 +11,35 @@ $("#searchBtn").click(function(){
 			artist: artist,
 			genre: genre
 		}
-	}).done(function(response){
+	})
+	.done(function(response){
 		var $results = $("#results");
+		$results.html("");
+		$results.removeClass("bg-warning");
+		$results.addClass("bg-info mt-5");
 		for (i in response){
-			console.log(response[i]);
-			$results.append(
-					'<div><div class="result-content">Песен: '+response[i].name+'</div>'+
+			$results.append('<div class="text-white p-3">'+
+					'<div class="result-content">Песен: '+response[i].name+'</div>'+
 					'<div class="result-content">Изпълнител: '+response[i].artist+'</div>'+
-					'<div class="result-content">Жанр: '+response[i].genre+'</div></div>'
-					);
+					'<div class="result-content">Жанр: '+response[i].genre+'</div>'+
+					'</div>');
 		}
+		$(".result-content").addClass("bg-primary p-4");
+	})
+	.fail(function(){
+		var $results = $("#results");
+		$results.html("");
+		$results.addClass("bg-warning p-3 mt-5");
+		$results.append("No songs found!");
 	});
 });
 
 $("#toggleBtn").click(function(){
-	var results = $(".result-content");
-	var display = results.css("display");
+	var $results = $(".result-content");
+	var display = $results.css("display");
 	if (display == "block") {
-		results.css("display", "inline-block");
+		$results.css("display", "inline-block");
 	} else if (display == "inline-block") {
-		results.css("display", "block");
+		$results.css("display", "block");
 	}
 });

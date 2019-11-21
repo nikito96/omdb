@@ -3,25 +3,42 @@
 <head>
 	<title>Online music database</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
-<body>
-	<form id="getMusicForm">
-		<input type="text" id="name" placeholder="Песен">
-		<input type="text" id="artist" placeholder="Изпълнител">
-		<select id="genre">
-			<option value="rap">Рап</option>
-			<option value="pop-folk">Поп-фолк</option>
-			<option value="pop">Поп</option>
-			<option value="latino">Латино</option>
-			<option value="house">Хаус</option>
-		</select>
-	</form>
-
-	<button id="searchBtn" form="gettMusicForm">Търси</button>
-	<button id="toggleBtn">Начин на показване</button>
-	<div id="results"></div>
-
+<body class="bg-secondary">
+	<div class="container">
+		<div class="jumbotron text-center m-2">
+			<a href="index.html" id="title"><h2>OMDB</h2></a>
+		</div>
+		<div class="row">
+			<div class="col-8">
+				<form id="getMusicForm" class="form-inline">
+					<input type="text" id="name" placeholder="Песен" class="form-control m-1">
+					<input type="text" id="artist" placeholder="Изпълнител" class="form-control m-1">
+					<select id="genre" class="form-control">
+						<option value="rap">Рап</option>
+						<option value="pop-folk">Поп-фолк</option>
+						<option value="pop">Поп</option>
+						<option value="latino">Латино</option>
+						<option value="house">Хаус</option>
+					</select>
+					<button id="searchBtn" form="gettMusicForm" class="btn btn-light m-1">Търси</button>
+				</form>
+			</div>
+			<div class="col-4 text-center">
+				<button id="toggleBtn" class="btn btn-danger m-1">Начин на показване</button>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-6"  id="resultsRow">
+				<div id="results">
+					<div class="bg-dark text-white p-3 mt-5">Попълни полетата за търсене!</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script
 			  src="https://code.jquery.com/jquery-3.4.1.js"
 			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="

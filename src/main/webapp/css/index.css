@@ -1,3 +1,7 @@
-.result {
-	display: inline-block;
+#title {
+	text-decoration: none;
+}
+
+#resultsRow {
+	margin: auto;
 }
