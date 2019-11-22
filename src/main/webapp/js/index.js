@@ -19,10 +19,10 @@ $("#searchBtn").click(function(){
 		$results.addClass("bg-info mt-5");
 		for (i in response){
 			$results.append('<div class="text-white p-3">'+
-					'<div class="result-content">Песен: '+response[i].name+'</div>'+
-					'<div class="result-content">Изпълнител: '+response[i].artist+'</div>'+
-					'<div class="result-content">Жанр: '+response[i].genre+'</div>'+
-					'</div>');
+				'<div class="result-content"><span class="font-weight-bold">Песен</span>: '+response[i].name+'</div>'+
+				'<div class="result-content"><span class="font-weight-bold">Изпълнител:</span> '+response[i].artist+'</div>'+
+				'<div class="result-content"><span class="font-weight-bold">Жанр:</span> '+response[i].genre+'</div>'+
+				'</div>');
 		}
 		$(".result-content").addClass("bg-primary p-4");
 	})
@@ -30,7 +30,7 @@ $("#searchBtn").click(function(){
 		var $results = $("#results");
 		$results.html("");
 		$results.addClass("bg-warning p-3 mt-5");
-		$results.append("No songs found!");
+		$results.append('<div class="font-weight-bold">Няма открити песни!</div>');
 	});
 });
 
