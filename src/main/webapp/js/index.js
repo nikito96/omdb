@@ -29,6 +29,7 @@ $("#searchBtn").click(function(){
 	.fail(function(){
 		var $results = $("#results");
 		$results.html("");
+		$results.removeClass("bg-info");
 		$results.addClass("bg-warning p-3 mt-5");
 		$results.append('<div class="font-weight-bold">Няма открити песни!</div>');
 	});
