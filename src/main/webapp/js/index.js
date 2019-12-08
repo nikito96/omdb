@@ -18,11 +18,11 @@ $("#searchBtn").click(function(){
 		$results.removeClass("bg-warning");
 		$results.addClass("bg-info mt-5");
 		for (i in response){
-			$results.append('<div class="text-white p-3">'+
-				'<div class="result-content"><span class="font-weight-bold">Песен</span>: '+response[i].name+'</div>'+
-				'<div class="result-content"><span class="font-weight-bold">Изпълнител:</span> '+response[i].artist+'</div>'+
-				'<div class="result-content"><span class="font-weight-bold">Жанр:</span> '+response[i].genre+'</div>'+
-				'</div>');
+			$results.append('<div class="text-white row p-3"><div class="col">'+
+				'<div class="result-content"><span class="font-weight-bold">Песен: </span>'+response[i].name+'</div>'+
+				'<div class="result-content"><span class="font-weight-bold">Изпълнител: </span>'+response[i].artist+'</div>'+
+				'<div class="result-content"><span class="font-weight-bold">Жанр: </span>'+response[i].genre+'</div>'+
+				'</div></div>');
 		}
 		$(".result-content").addClass("bg-primary p-4");
 	})

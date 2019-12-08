@@ -25,7 +25,7 @@ public class MusicAPI {
 	public ResponseEntity<List<Song>> searchSongs(@RequestParam(required=false) String name,
 			@RequestParam(required=false) String artist,
 			@RequestParam String genre) {
-		List<Song> songs = new ArrayList<>();
+		final List<Song> songs = new ArrayList<>();
 		
 		if(null == name && null == artist && null == genre) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);

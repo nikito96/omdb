@@ -2,10 +2,13 @@ package com.uni.nikola.omdb.models;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Song implements Serializable {
@@ -18,6 +21,8 @@ public class Song implements Serializable {
 	private String name;
 	private String artist;
 	private String genre;
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private User user;
 	
 	public Song() {
 		
