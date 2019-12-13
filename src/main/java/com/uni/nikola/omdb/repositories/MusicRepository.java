@@ -8,5 +8,5 @@ import com.uni.nikola.omdb.models.Song;
 
 @Repository
 public interface MusicRepository extends JpaRepository<Song, Integer> {
-	List<Song> findByNameLikeOrArtistLikeOrGenre(String name, String artist, String genre);
+	List<Song> findByNameContainsOrArtistContainsAndGenre(String name, String artist, String genre);
 }

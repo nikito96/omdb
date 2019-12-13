@@ -5,7 +5,7 @@ $("#searchBtn").click(function(){
 
 	$.ajax({
 		method: "GET",
-		url: "/songs",
+		url: "/searchSongs",
 		data: {
 			name: name,
 			artist: artist,
