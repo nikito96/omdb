@@ -9,6 +9,7 @@ $(document).ready(function(){
 			'<div><span>Име: </span><a href="/song.html?id='+response[i].id+'">'+response[i].name+'</a></div>'+
 			'<div><span>Изпълнител: </span>'+response[i].artist+'</div>'+
 			'<div><span>Жанр: </span>'+response[i].genre+'</div>'+
+			'<a href="/update.html?id='+response[i].id+'">Редактирай</a>'+
 			'<button songId="'+response[i].id+'" class="delete">Изтрий</button>'+
 			'<a>'+'</a>'+
 			'</div>');
