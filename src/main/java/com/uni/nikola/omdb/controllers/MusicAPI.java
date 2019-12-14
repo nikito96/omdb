@@ -54,8 +54,11 @@ public class MusicAPI {
 	}
 	
 	@PostMapping("/songs")
-	public Song newSong(@RequestBody Song newSong) {
-		return this.musicRepo.saveAndFlush(newSong);		
+	public Song newSong(@RequestParam() String name,
+			@RequestParam() String artist,
+			@RequestParam() String genre) {
+		final Song song = new Song(name, artist, genre);
+		return this.musicRepo.saveAndFlush(song);
 	}
 	
 	@GetMapping("/songs/{id}")

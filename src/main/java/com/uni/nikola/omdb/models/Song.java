@@ -17,7 +17,7 @@ public class Song implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
+	private int id;
 	private String name;
 	private String artist;
 	private String genre;
@@ -28,8 +28,7 @@ public class Song implements Serializable {
 		
 	}
 	
-	public Song(int id, String name, String artist, String genre) {
-		this.id = id;
+	public Song(String name, String artist, String genre) {
 		this.name = name;
 		this.artist = artist;
 		this.genre = genre;
@@ -63,8 +62,16 @@ public class Song implements Serializable {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override
