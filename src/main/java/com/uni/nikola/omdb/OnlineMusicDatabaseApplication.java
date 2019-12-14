@@ -23,14 +23,16 @@ public class OnlineMusicDatabaseApplication {
 	
 	@SuppressWarnings("deprecation")
 	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurerAdapter() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/songs")
-				.allowedOrigins("*")
-				.allowedMethods("PUT", "DELETE");
-			}
-		};
-	}
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/songs")
+                .allowedOrigins("*")
+                .allowedMethods("GET", "POST","PUT", "DELETE");
+
+
+            }
+        };
+    }
 }
