@@ -67,15 +67,19 @@ public class MusicAPI {
 	}
 	
 	@PutMapping("/songs/{id}")
-	public Song updateSong(@RequestBody Song updatedSong, @PathVariable Integer id) {
+	public Song updateSong(@RequestParam() String name,
+			@RequestParam() String artist,
+			@RequestParam() String genre,
+			@PathVariable Integer id) {
 		return this.musicRepo.findById(id).map(song -> {
-			song.setName(updatedSong.getName());
-			song.setArtist(updatedSong.getArtist());
-			song.setGenre(updatedSong.getGenre());
+			song.setName(name);
+			song.setArtist(artist);
+			song.setGenre(genre);
 			return this.musicRepo.saveAndFlush(song);
 		}).orElseGet(() -> {
-			updatedSong.setId(id);
-			return this.musicRepo.saveAndFlush(updatedSong);
+			final Song song = new Song(name, artist, genre);
+			song.setId(id);
+			return this.musicRepo.saveAndFlush(song);
 		});
 	}
 	
