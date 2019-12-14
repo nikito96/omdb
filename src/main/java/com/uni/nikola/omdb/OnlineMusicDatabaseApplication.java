@@ -20,19 +20,4 @@ public class OnlineMusicDatabaseApplication {
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
-	@SuppressWarnings("deprecation")
-	@Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/songs")
-                .allowedOrigins("*")
-                .allowedMethods("GET", "POST","PUT", "DELETE");
-
-
-            }
-        };
-    }
 }

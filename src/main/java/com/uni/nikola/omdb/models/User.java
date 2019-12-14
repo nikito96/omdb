@@ -28,7 +28,7 @@ public class User implements Serializable {
 	private String password;
 	private boolean enabled;
 	
-	@OneToMany(mappedBy="user", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private List<Song> songs;
 	
 	@ManyToMany(fetch=FetchType.EAGER)

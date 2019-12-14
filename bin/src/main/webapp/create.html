@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Създай нов запис</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form>
+		<label for="name">Име:</label>
+		<input type="name" name="name" id="name">
+		<label for="artist">Изпълнител:</label>
+		<input type="artist" name="artist" id="artist">
+		<label for="genre">Жанр:</label>
+		<select id="genre">
+			<option value="rap">Рап</option>
+			<option value="pop-folk">Поп-фолк</option>
+			<option value="pop">Поп</option>
+			<option value="latino">Латино</option>
+			<option value="house">Хаус</option>
+		</select>
+		<!--<input type="genre" name="genre" id="genre">-->
+		<button id="createButton" type="button">Създай</button>
+	</form>
+	<script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/create.js"></script>
+</body>
+</html>

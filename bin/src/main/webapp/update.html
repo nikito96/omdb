@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Редактиране</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form>
+		<input type="hidden" name="id" id="updatedId">
+		<label for="updatedName">Име:</label>
+		<input type="text" name="name" id="updatedName">
+		<label for="updatedArtist">Изпълнител:</label>
+		<input type="text" name="artist" id="updatedArtist">
+		<label for="updatedGenre">Жанр:</label>
+		<select id="updatedGenre">
+			<option value="rap">Рап</option>
+			<option value="pop-folk">Поп-фолк</option>
+			<option value="pop">Поп</option>
+			<option value="latino">Латино</option>
+			<option value="house">Хаус</option>
+		</select>
+		<!--<input type="text" name="genre" id="updatedGenre">-->
+		<button id="updateButton" type="button">Промени</button>
+	</form>
+	<script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/update.js"></script>
+</body>
+</html>

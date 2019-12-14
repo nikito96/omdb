@@ -21,7 +21,7 @@ public class Song implements Serializable {
 	private String name;
 	private String artist;
 	private String genre;
-	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private User user;
 	
 	public Song() {
