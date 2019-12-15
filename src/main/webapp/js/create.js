@@ -17,5 +17,6 @@ $("#createButton").click(function(){
 		}
 	}).done(function(response){
 		console.log(response);
+		window.location = "song.html?id="+response.id;
 	});
 });

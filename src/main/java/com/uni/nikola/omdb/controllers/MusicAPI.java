@@ -36,16 +36,14 @@ public class MusicAPI {
 	
 	@GetMapping("/searchSongs")
 	public ResponseEntity<List<Song>> songs(@RequestParam(required=false) String name,
-			@RequestParam(required=false) String artist,
 			@RequestParam(required=false) String genre) {
 		final List<Song> songs = new ArrayList<>();
 		
-		if(null == name && null == artist && null == genre) {
-			songs.addAll(musicRepo.findAll());
-			return ResponseEntity.ok(songs);
+		if(name.length() < 1 && genre.length() < 1) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 		}
 		
-		songs.addAll(musicRepo.findByNameContainsOrArtistContainsAndGenre(name, artist, genre));
+		songs.addAll(musicRepo.findByNameContainsAndGenre(name, genre));
 		
 		if(songs.isEmpty()) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
@@ -65,12 +63,13 @@ public class MusicAPI {
 			@RequestParam() String genre) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		User user = userRepo.findByUsername(authentication.getName());
-		final Song song = new Song(name, artist, genre);
+		Song song = new Song(name, artist, genre);
 		List<Song> songs = new ArrayList<>();
 		songs.add(song);
 		user.setSongs(songs);
 		song.setUser(user);
-		this.userRepo.saveAndFlush(user);
+		user = this.userRepo.saveAndFlush(user);
+		song = songs.get(songs.size() -1);
 		return song;
 	}
 	

@@ -1,6 +1,5 @@
 $("#searchBtn").click(function(){
 	var name = $("#name").val();
-	var artist = $("#artist").val();
 	var genre = $("#genre").val();
 
 	$.ajax({
@@ -8,7 +7,6 @@ $("#searchBtn").click(function(){
 		url: "/searchSongs",
 		data: {
 			name: name,
-			artist: artist,
 			genre: genre
 		}
 	})
