@@ -32,17 +32,19 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.csrf().disable()
+		.cors().disable()
 		.authorizeRequests()
+		.antMatchers("/css/login.css").permitAll()
 		.antMatchers("/register.html").permitAll()
 		.antMatchers("/register").permitAll()
 		.antMatchers("/update.html").permitAll()
+		.antMatchers("/user").permitAll()
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login.html")
 		.loginProcessingUrl("/perform_login")
 		.defaultSuccessUrl("/index.html").permitAll()
 		.and()
-		.logout().permitAll()
-		.and();
+		.logout().permitAll();
 	}
 
 	@Override

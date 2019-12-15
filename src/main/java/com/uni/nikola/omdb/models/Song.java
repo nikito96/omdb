@@ -10,7 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
+@JsonIgnoreProperties("user")
 public class Song implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -21,7 +24,7 @@ public class Song implements Serializable {
 	private String name;
 	private String artist;
 	private String genre;
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private User user;
 	
 	public Song() {
