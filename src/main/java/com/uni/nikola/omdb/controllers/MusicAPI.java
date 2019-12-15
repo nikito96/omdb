@@ -39,7 +39,7 @@ public class MusicAPI {
 			@RequestParam(required=false) String genre) {
 		final List<Song> songs = new ArrayList<>();
 		
-		if(name.length() < 1 && genre.length() < 1) {
+		if(name == null || name.isEmpty()) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 		}
 		
