@@ -95,13 +95,8 @@ public class MusicAPI {
 		});
 	}
 	
-//	@DeleteMapping("/songs/{id}")
-//	public void deleteSong(@PathVariable Integer id) {
-//		this.musicRepo.deleteById(id);
-//	}
-	
-	@PostMapping("/song/{id}")
-	public void deleteSong(@PathVariable() Integer id) {
+	@DeleteMapping("/songs/{id}")
+	public void deleteSong(@PathVariable Integer id) {
 		this.musicRepo.deleteById(id);
 	}
 }

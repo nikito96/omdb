@@ -3,8 +3,8 @@ $(document).on('click', ".delete", function() {
 	var $songForRemove = $(this).closest(".song");
 
 	$.ajax({
-		method: "POST",
-		url: "/song/" + id
+		method: "DELETE",
+		url: "/songs/" + id
 	})
 	.done(function(){
 		$songForRemove.remove();
